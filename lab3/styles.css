@@ -1,0 +1,134 @@
+/* Основной стиль страницы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
+}
+
+/* Шапка страницы */
+header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+/* Меню */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+nav a {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #333;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+nav a:hover {
+    background-color: #3399ff;
+    color: white;
+    box-shadow: 0 0 8px rgba(51,153,255,0.6);
+}
+
+/* Основной контент */
+main, section {
+    padding: 20px;
+    flex: 1;
+}
+
+/* Таблица */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+thead th {
+    background-color: #0066cc;
+    color: white;
+}
+tbody th {
+    background-color: #cce5ff;
+    font-weight: bold;
+}
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tbody tr:nth-child(odd) {
+    background-color: #e6f2ff;
+}
+
+/* Прозрачность */
+footer {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+    border-top: 2px solid #ccc;
+}
+
+/* Скругление и тени */
+section, aside, form {
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* Медиазапросы */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    table {
+        font-size: 0.85em;
+    }
+}
+
+@media print {
+    body {
+        background: none;
+        color: black;
+    }
+    header, nav, footer {
+        display: none;
+    }
+    table {
+        border: 1px solid black;
+    }
+}
