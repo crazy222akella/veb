@@ -1,0 +1,149 @@
+/* ========== Общие ========== */
+* { box-sizing: border-box; }
+html,body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ссылки */
+a { text-decoration: none; color: inherit; }
+
+/* ========== Верхняя панель ========== */
+.top-bar {
+  background: #111;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  font-size: 15px;
+  z-index: 40;
+}
+
+/* ========== Шапка ========== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  padding: 14px 28px;
+  border-bottom: 1px solid #222;
+  position: relative;
+  z-index: 40;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #0ff;
+}
+.main-nav {
+  display: flex;
+  gap: 90px;
+  flex-wrap: wrap;
+}
+.main-nav a { color: #ddd; transition: color .18s; }
+.main-nav a:hover { color: #0ff; }
+
+/* ========== HERO (фон: картинка на весь экран) ========== */
+.hero {
+  position: relative;
+  height: 100vh;                /* занимает весь экран */
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+              url("drone.png") center center / cover no-repeat;
+}
+
+/* затемнение поверх картинки для читаемости текста */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.6));
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  padding: 0 20px;
+  max-width: 980px;
+}
+
+/* Заголовки и кнопки */
+.hero h1 {
+  font-size: clamp(28px, 6vw, 64px);
+  margin: 0 0 16px 0;
+  color: #e8fefe;
+  text-shadow: 0 6px 30px rgba(0,255,255,0.04);
+}
+.hero p {
+  font-size: clamp(14px, 2vw, 20px);
+  margin: 0 0 28px 0;
+  color: #dfeeee;
+}
+.hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn.primary {
+  background: #0ff;
+  color: #000;
+}
+.btn.secondary {
+  background: transparent;
+  color: #0ff;
+  border: 2px solid rgba(0,255,255,0.12);
+}
+
+/* ========== Контент ========== */
+.block {
+  padding: 60px 20px;
+  text-align: center;
+  background: #111;
+  border-top: 1px solid #222;
+}
+.block:nth-child(even) { background: #1a1a1a; }
+.block h2 { margin-bottom: 12px; }
+
+/* ========== Футер ========== */
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 14px;
+  border-top: 1px solid #222;
+}
+
+/* ========== Небольшая анимация "пульс" для лёгкого эффекта ========== */
+.hero {
+  animation: subtle-pulse 8s infinite ease-in-out;
+}
+@keyframes subtle-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.002); } /* очень лёгкий зум */
+  100% { transform: scale(1); }
+}
+
+/* ========== Резиновость для узких экранов ========== */
+@media (max-width: 720px) {
+  .main-nav { display: none; } /* убрать длинное меню на мобильных — потом можно заменить бургер-меню */
+  .top-bar { justify-content: center; gap: 10px; padding: 8px 10px; }
+  .hero { height: 80vh; min-height: 520px; }
+}

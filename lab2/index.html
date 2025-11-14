@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DRONFIX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Верхняя панель -->
+  <div class="top-bar">
+    <a href="#">Задать вопрос</a>
+    <a href="#">Техподдержка</a>
+  </div>
+
+  <!-- Шапка -->
+  <header class="main-header">
+    <div class="logo">DRONFIX</div>
+    <nav class="main-nav">
+      <a href="#" onclick="showUnavailable('Продукты')">Продукты</a>
+      <a href="#" onclick="showUnavailable('Сферы применения дронов')">Сферы применения дронов</a>
+      <a href="#" onclick="showUnavailable('Блог')">Блог</a>
+      <a href="#" onclick="showUnavailable('Поиск')">Поиск</a>
+      <a href="#" onclick="showUnavailable('English')">English</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Будущее дронов уже здесь</h1>
+      <p>Разработка, сервис и уникальные решения для бизнеса и индустрии</p>
+      <div class="hero-buttons">
+        <a href="product1.html" class="btn primary">Наши продукты</a>
+        <a href="#" class="btn secondary" onclick="showUnavailable('Связаться')">Связаться</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Товары -->
+  <section class="products">
+    <h2>Наши товары</h2>
+    <div class="product-list">
+      <a href="product1.html" class="product-card">
+        <img src="images/drone1.jpg" alt="Drone 1">
+        <h3>Образовательные</h3>
+        <p>Дроны для начинающих с камерой Full HD.</p>
+      </a>
+      <a href="product2.html" class="product-card">
+        <img src="images/drone2.jpg" alt="Drone 2">
+        <h3>Drone Pro 5</h3>
+        <p>Профессиональный дрон с дальностью полета до 10 км.</p>
+      </a>
+      <a href="product3.html" class="product-card">
+        <img src="images/drone3.jpg" alt="Drone 3">
+        <h3>Drone Max</h3>
+        <p>Мощный дрон для индустриальных задач и аэрофотосъёмки.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Контент -->
+  <main>
+    <section class="block">
+      <h2>Наши продукты</h2>
+      <p>Обзор, характеристики и обслуживание дронов.</p>
+    </section>
+
+    <section class="block">
+      <h2>Сферы применения дронов</h2>
+      <p>От образования и сельского хозяйства до шоу дронов.</p>
+    </section>
+
+   <!-- Форма поиска -->
+<section class="search-section">
+  <h2>Поиск по сайту</h2>
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Введите запрос..." required>
+    <button type="submit" class="btn primary">Найти</button>
+  </form>
+  <!-- Контейнер для красивого уведомления -->
+  <div id="searchMessage" class="search-message"></div>
+</section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <p>© 2025 DRONFIX. Все права защищены.</p>
+  </footer>
+
+  <!-- Внешний скрипт -->
+  <script src="script.js"></script>
+
+  <!-- Встроенный обработчик формы -->
+  <script>
+    document.getElementById("searchForm").onsubmit = function(event) {
+      event.preventDefault();
+      alert("Функция поиска на данный момент недоступна!");
+    };
+  </script>
+</body>
+</html>
