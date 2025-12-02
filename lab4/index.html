@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Органайзер</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <div id="calendar">
+        <div id="monthNav">
+            <button id="prev">←</button>
+            <h3 id="monthLabel"></h3>
+            <button id="next">→</button>
+        </div>
+
+        <table id="monthTable"></table>
+    </div>
+
+    <div id="tasks">
+        <h3>Дела на <span id="selectedDateLabel">—</span></h3>
+        <ul id="taskList"></ul>
+
+        <input type="text" id="taskInput" placeholder="Новое дело">
+        <button id="addTaskBtn">Добавить</button>
+    </div>
+
+    <script src="organizer.js"></script>
+
+    </body>
+</html>
